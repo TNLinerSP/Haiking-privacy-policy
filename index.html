@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー | Haiking</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23234A6A'/%3E%3Crect x='40' y='19' width='20' height='62' rx='4' fill='%23ffffff'/%3E%3C/svg%3E">
+<style>
+    /* Humpty County のポリシーページと同じ構成。色は Haiking の伝統色（docs/design/colors.md）に置きかえた */
+    :root {
+        --accent: #234A6A;      /* 藍色 */
+        --accent-soft: #8BB1D5; /* 勿忘草色 */
+        --navy: #234A6A;
+        --ink: #313131;         /* 墨 */
+        --subtext: #66625C;
+        --paper: #F5F4F0;       /* 胡粉色と白の混色 */
+        --glass: rgba(255, 255, 255, 0.62);
+        --glass-border: rgba(255, 255, 255, 0.75);
+        --link: #1F5C8A;
+        --radius: 18px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --navy: #8BB1D5;
+            --ink: #EBE8E2;     /* 胡粉色 */
+            --subtext: #A9A49B;
+            --paper: #262626;   /* 黒 */
+            --glass: rgba(49, 49, 49, 0.62);
+            --glass-border: rgba(255, 255, 255, 0.10);
+            --link: #8BB1D5;
+        }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: var(--ink);
+        line-height: 1.75;
+        background:
+            radial-gradient(900px 620px at 8% -12%, rgba(139, 177, 213, 0.40), transparent 60%),
+            radial-gradient(880px 640px at 104% -4%, rgba(35, 74, 106, 0.18), transparent 58%),
+            radial-gradient(760px 700px at 50% 112%, rgba(235, 226, 213, 0.70), transparent 62%),
+            var(--paper);
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background:
+                radial-gradient(900px 620px at 8% -12%, rgba(139, 177, 213, 0.16), transparent 60%),
+                radial-gradient(880px 640px at 104% -4%, rgba(35, 74, 106, 0.30), transparent 58%),
+                var(--paper);
+            background-attachment: fixed;
+        }
+    }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 20px 72px; }
+
+    header { text-align: center; margin-bottom: 26px; }
+
+    .app-icon {
+        width: 76px;
+        height: 76px;
+        margin: 0 auto 14px;
+        display: block;
+        /* 角の丸みと地はアイコンの画像に入っている */
+        filter: drop-shadow(0 10px 16px rgba(35, 74, 106, 0.28));
+    }
+
+    .logo {
+        display: inline-block;
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--navy);
+        padding: 0 6px;
+        position: relative;
+        margin-bottom: 16px;
+    }
+    .logo::after {
+        content: "";
+        position: absolute;
+        left: -2px; right: -2px; bottom: 2px;
+        height: 8px;
+        background: linear-gradient(90deg, rgba(139, 177, 213, 0.65), rgba(35, 74, 106, 0.35));
+        border-radius: 4px;
+        z-index: -1;
+    }
+
+    h1 {
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+        font-size: 25px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--navy);
+    }
+    .subtitle { font-size: 13px; color: var(--subtext); margin-bottom: 14px; }
+
+    .links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .cross-link {
+        display: inline-block;
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--navy);
+        text-decoration: none;
+        padding: 7px 15px;
+        border-radius: 999px;
+        background: var(--glass);
+        backdrop-filter: blur(12px) saturate(160%);
+        -webkit-backdrop-filter: blur(12px) saturate(160%);
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 6px 16px -10px rgba(35, 74, 106, 0.5);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cross-link:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 20px -10px rgba(35, 74, 106, 0.55);
+    }
+
+    .card {
+        position: relative;
+        background: var(--glass);
+        backdrop-filter: blur(26px) saturate(175%);
+        -webkit-backdrop-filter: blur(26px) saturate(175%);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius);
+        padding: 30px 24px;
+        margin: 28px 0 20px;
+        box-shadow:
+            0 24px 48px -28px rgba(35, 74, 106, 0.40),
+            inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        overflow: hidden;
+    }
+
+    .section { margin-bottom: 28px; }
+    .section:last-child { margin-bottom: 0; }
+
+    h2 {
+        font-size: 16px;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 10px;
+        padding-bottom: 9px;
+        display: inline-block;
+        background: linear-gradient(90deg, var(--accent), var(--accent-soft)) no-repeat left bottom / 100% 2px;
+    }
+
+    p { font-size: 14.5px; margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul { list-style: none; margin-bottom: 12px; }
+    ul:last-child { margin-bottom: 0; }
+    li { font-size: 14.5px; margin-bottom: 10px; padding-left: 22px; position: relative; }
+    li:last-child { margin-bottom: 0; }
+    li::before {
+        content: "";
+        position: absolute;
+        left: 2px; top: 10px;
+        width: 7px; height: 7px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+        box-shadow: 0 0 0 3px rgba(139, 177, 213, 0.22);
+    }
+
+    strong { font-weight: 700; }
+    a { color: var(--link); overflow-wrap: anywhere; }
+
+    .contact-card {
+        background:
+            linear-gradient(135deg, rgba(139, 177, 213, 0.22), rgba(35, 74, 106, 0.10)),
+            var(--glass);
+    }
+
+    .footer-note { text-align: center; margin-top: 34px; font-size: 12px; color: var(--subtext); }
+
+    @media (max-width: 600px) {
+        .container { padding: 30px 16px 52px; }
+        .card { padding: 24px 18px; border-radius: 16px; }
+        h1 { font-size: 21px; }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="icon.png" alt="Haiking" class="app-icon">
+            <div class="logo">Haiking</div>
+            <h1>プライバシーポリシー</h1>
+            <div class="subtitle">最終更新日: 2026年11月4日</div>
+
+            <div class="links">
+                <a href="terms.html" class="cross-link">利用規約</a>
+            </div>
+        </header>
+
+        <div class="card">
+            <div class="section">
+                <p>TNLiner(以下「当方」)は、提供するiOS用の俳句・川柳・短歌の投稿アプリ「Haiking」(以下「本アプリ」)における、ユーザーの個人情報および利用者情報の取扱いについて、以下のとおりプライバシーポリシー(以下「本ポリシー」)を定めます。</p>
+            </div>
+
+            <div class="section">
+                <h2>1. 取得する情報</h2>
+                <p>本アプリは、句を投稿してほかのユーザーと共有するために、当方が利用するサーバーに以下の情報を保存します。</p>
+                <ul>
+                    <li><strong>アカウントの識別子:</strong> Sign in with Appleがアプリごとに発行する識別子、またはGoogleアカウントの識別子(サインイン時)</li>
+                    <li><strong>メールアドレス:</strong> 「Googleでログイン」を使った場合のみ、Googleアカウントのメールアドレス(サインイン時)</li>
+                    <li><strong>プロフィール:</strong> 表示名、ユーザーID(@ID)、自己紹介、アイコン画像、プロフィールの上に飾る代表句と背景色(ユーザーが入力・選択したとき)</li>
+                    <li><strong>投稿:</strong> 句の本文、形式(俳句・川柳・短歌)、投稿日時、返信・引用の関係、参加したお題、続きの募集(連歌・前句付け)の設定と、選んだ付句(投稿・操作したとき)</li>
+                    <li><strong>投稿の位置:</strong> ユーザーが投稿ごとに選んだ粒度の位置(「2. 位置情報について」を参照)</li>
+                    <li><strong>ユーザー同士の関係:</strong> フォロー、よきかな(いいね)、リポスト、ブロック、ミュート(操作したとき)</li>
+                    <li><strong>通報:</strong> 通報の対象、理由、任意のメモ(通報したとき)</li>
+                    <li><strong>プッシュ通知用のトークンと通知の設定:</strong> Appleが発行する通知の宛先を表す値と、種類ごとの通知のオン/オフ(通知を許可したとき・設定を変えたとき)</li>
+                </ul>
+                <p>Sign in with Appleからは、氏名やメールアドレスを<strong>受け取りません。</strong></p>
+                <p>「Googleでログイン」を使った場合は、識別子とメールアドレスだけを受け取ります。メールアドレスはほかのユーザーに表示せず、別のアカウントとの統合にも使いません。</p>
+                <p>アイコン画像は、端末で256×256ピクセルに縮小してから保存します。句を画像にする「短冊カード」は端末の中で作り、当方のサーバーには保存しません。</p>
+            </div>
+
+            <div class="section">
+                <h2>2. 位置情報について</h2>
+                <p>位置情報は、投稿画面を開いたとき(位置の既定を「なし」にしている場合を除きます)と、地図を初めて開いたときに、端末の許可(「Appの使用中のみ」)を求めて取得します。許可しなくても、本アプリはご利用いただけます。</p>
+                <p>投稿の位置には、端末の現在地のほか、ユーザーが地図で選んだ地点(「地図で場所を選ぶ」、地図の長押し)を使うこともできます。どちらの場合も、以下の粒度の選び方と取扱いは同じです。</p>
+                <p>投稿ごとに、位置の粒度を次の4つから選べます。</p>
+                <ul>
+                    <li><strong>正確な場所:</strong> 小数点以下4桁(約10m)に丸めた緯度・経度と、市区町村のコードをサーバーに送ります。地図上のその地点に句が表示され、市区町村名も表示されます。</li>
+                    <li><strong>市区町村:</strong> 市区町村のコードだけを送ります(緯度・経度は送りません)。市区町村名が表示されます。</li>
+                    <li><strong>都道府県:</strong> 都道府県のコードだけを送ります(緯度・経度は送りません)。都道府県名が表示されます。</li>
+                    <li><strong>なし:</strong> 位置に関する情報は何も送りません。</li>
+                </ul>
+                <p>市区町村・都道府県の判定は、端末の中で行います(端末の位置または地図で選んだ地点を、本アプリに同梱した行政区域の一覧と照らし合わせます)。<strong>「市区町村」「都道府県」「なし」を選んだ投稿について、緯度・経度が当方のサーバーに送られることはありません。</strong></p>
+                <p><strong>自宅ゾーン:</strong> 設定で自宅の周辺(中心と半径500m・1km・2km・5km・10km)を登録すると、その範囲の地点で「正確な場所」を選んでも(地図で選んだ地点を含みます)、自動的に「市区町村」で投稿します。<strong>自宅ゾーンの情報は端末の中にだけ保存し、当方のサーバーには送りません。</strong></p>
+                <p><strong>端末の中にだけ保存する情報:</strong> 自宅ゾーンのほか、最近の検索の語句、表示の設定(外観・文字の大きさ・本文の向きなど)、位置の既定の粒度は、端末の中にだけ保存し、当方のサーバーには送りません。</p>
+            </div>
+
+            <div class="section">
+                <h2>3. 利用目的</h2>
+                <p>取得した情報は、以下の目的で利用します。</p>
+                <ul>
+                    <li>本アプリの提供(投稿の表示、地図での表示、検索、お知らせ、プッシュ通知など)</li>
+                    <li>広告の表示(本アプリの運営費用にあてます)</li>
+                    <li>不正な利用や規約違反への対応(通報の確認、投稿の削除など)</li>
+                    <li>本アプリの改善、不具合の調査</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. 公開される情報</h2>
+                <p>プロフィール(表示名、@ID、自己紹介、アイコン、代表句と背景色)、投稿(本文、日時、選んだ粒度の位置、お題や続きの募集との関係)、フォロー・よきかな・リポストの関係は、本アプリのほかのユーザーに表示されます。</p>
+                <p>ブロック・ミュートの状態、通報の内容、メールアドレス、プッシュ通知用のトークンと通知の設定は、ほかのユーザーには表示されません。</p>
+            </div>
+
+            <div class="section">
+                <h2>5. 外部サービスの利用</h2>
+                <p>当方は、法令に基づく場合を除き、ユーザーの同意なく個人情報を第三者に提供しません。本アプリは、以下の外部サービスを利用しています。</p>
+                <ul>
+                    <li><strong>Supabase(Supabase, Inc.):</strong> データの保存と認証に利用しています。データは日本(東京)のサーバーに保存されます。</li>
+                    <li><strong>Sign in with Apple(Apple Inc.):</strong> サインインに利用しています。</li>
+                    <li><strong>Googleでログイン(Google LLC):</strong> ユーザーが選んだ場合に、サインインに利用しています。</li>
+                    <li><strong>Apple Push Notification service(Apple Inc.):</strong> プッシュ通知の配信に利用しています。通知の内容(相手の表示名と句の冒頭)は、配信のためにAppleに送られます。</li>
+                    <li><strong>Google AdMob(Google LLC):</strong> 広告の表示に利用しています(「6. 広告について」を参照)。</li>
+                    <li><strong>Googleフォーム(Google LLC):</strong> お問い合わせの受付に利用しています。お問い合わせの際にご入力いただいた内容は、Googleフォームを通じて当方に届きます。入力内容の取扱いには、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleのプライバシーポリシー</a>も適用されます。</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. 広告について</h2>
+                <p>本アプリは、タイムラインと、地図の句の一覧(「この範囲の句」「場所なしの句」)に、GoogleのAdMobによる広告を表示します。地図そのもの、投稿画面、句の詳細には広告を表示しません。広告には「広告」と表示します。</p>
+                <p>AdMobは、広告の配信と効果の測定のために、IPアドレス、端末の識別子、広告の表示や操作の情報などを取得します。詳しくは、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleのプライバシーポリシー</a>および<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Googleのサービスを使用するサイトやアプリから収集した情報のGoogleによる使用</a>をご覧ください。</p>
+                <p><strong>トラッキングについて:</strong> 本アプリを何回か起動したあとに、ほかの会社のアプリやウェブサイトをまたいだトラッキングの許可を求めます。許可した場合に限り、広告識別子(IDFA)が広告の配信に使われます。許可しない場合は、ユーザーに合わせない(パーソナライズしない)広告を表示します。許可しなくても、本アプリのすべての機能をご利用いただけます。許可は端末の「設定」からいつでも変更できます。</p>
+            </div>
+
+            <div class="section">
+                <h2>7. 保存期間と削除</h2>
+                <ul>
+                    <li>投稿を削除すると、その投稿と、投稿へのよきかな・リポストは、サーバーから直ちに削除されます。削除した投稿を元に戻すことはできません。</li>
+                    <li>アプリ内の「設定」→「アカウントを削除」から、アカウントと、プロフィール・投稿・よきかな・リポスト・フォロー・お知らせ・ブロック・ミュート・通報・アイコン画像・プッシュ通知用のトークン・通知の設定を削除できます。このとき、Sign in with Appleとの連携も解除します。</li>
+                    <li>ログアウトすると、その端末へのプッシュ通知用のトークンを削除します。</li>
+                    <li>サーバーのログやバックアップには、削除のあとも一定期間、情報が残ることがあります。</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>8. ユーザーの権利</h2>
+                <p>ユーザーは、アプリ内で自分の情報を確認・修正・削除できます。そのほかの開示・訂正・利用停止などのご請求は、下記の窓口までご連絡ください。</p>
+            </div>
+
+            <div class="section">
+                <h2>9. データの出典</h2>
+                <ul>
+                    <li>地図の行政区域は、「国土数値情報(行政区域データ)」(国土交通省)を加工して作成しています。</li>
+                    <li>地図に表示する古典の句は、ウィキソース「おくのほそ道」(底本: 三宅邦吉『新釈奥の細道』籾山書店、明治44年)によります。</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>10. 未成年の方のご利用について</h2>
+                <p>本アプリは、投稿がほかのユーザーに公開されるサービスです。保護者の方は、未成年の方が本アプリをご利用になる際、内容についてご確認いただくことをお勧めします。</p>
+            </div>
+
+            <div class="section">
+                <h2>11. 本ポリシーの変更</h2>
+                <p>本ポリシーの内容は、法令の変更やアプリの機能追加等に伴い、変更されることがあります。変更後のポリシーは、本ページに掲載した時点から効力を生じるものとします。重要な変更は、アプリ内などでお知らせします。</p>
+            </div>
+
+            <div class="section">
+                <h2>12. お問い合わせ窓口</h2>
+                <p>本ポリシーに関するお問い合わせ、またはアプリに関するご意見・ご質問は、下記の窓口までお願いいたします。</p>
+            </div>
+        </div>
+
+        <div class="card contact-card">
+            <ul style="margin-bottom:0">
+                <li><strong>開発者:</strong> TNLiner(代表 S.K.)</li>
+                <li><strong>お問い合わせフォーム:</strong> <a href="https://forms.gle/vkHq6i9CowQng8M28" target="_blank" rel="noopener">https://forms.gle/vkHq6i9CowQng8M28</a>(アプリ内の「設定」→「お問い合わせ」からも開けます)</li>
+                <li><strong>Email:</strong> <a href="mailto:tnliner.support@gmail.com">tnliner.support@gmail.com</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-note">Haiking — TNLiner</div>
+    </div>
+</body>
+</html>
